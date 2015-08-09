@@ -1,0 +1,30 @@
+<div class="contianer-fluid">
+	<div class="container">
+		<div class="page-header">
+			<h1 class="text-center"><strong>FPS Query Tool</strong></h1>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+				<div class="dropdown">
+					<h4>Act: <%= select("act", "act", @acts, :prompt => "All") %></h4>
+				</div>
+			</div >
+			<div class="col-md-6">
+				<div class="dropdown">
+					<h4>World: <%= select("collection", "collection_id", Collection.all.collect {|p| [ p.world, p.id ] }, :prompt => "Select a World") %></h4>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div id="query_fps" class="btn btn-success"><h4>Query FPS</h4></div>
+			</div>
+		</div>
+		<div class="row">
+			<div>
+			<h4>FPS Mean: <span id="fps_mean"></span></h4>
+			<h4>FPS Range: <span id="fps_min"></span> - <span id="fps_max"></span></h4>
+			<h4>FPS Std: <span id="fps_std"></span></h4>
+			<h4>FPS Observations: <span id="fps_observations"></span></h4>
+			</div>
+		</div>
+	</div>
+</div>

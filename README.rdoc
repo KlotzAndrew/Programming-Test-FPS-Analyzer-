@@ -1,0 +1,33 @@
+Why Ruby?
+9 months since I started coding. Only know Ruby so far, have not had a chance to learn Python yet.
+
+Framework:
+ * Rails
+ * Bootstrap
+
+List of tools I used:
+ * Sublime Text
+ * Rails
+ * Bootstrap
+
+Tool Setup/Use:
+ * move a folder (Foo) containing logs into app root folder (currently has FPSLogs for example)
+ * From app directory, run $ruby ./mytool.rb Foo
+ * From app directory, rails s
+ * localhost:3000 has FPS Query GUI
+
+ Improvements:
+ * I added in a few more stats. Adds a little more data fidelity (and I was interested)
+ * Remove 'Query FPS' button saves a user click. Page can update on drop down change of world
+ * Some sort of admin dashboard/graph would provide way more info at a glance. Also easy to implement
+ * Rspec tests
+ * Took 5 hours, 3 of which where googling part 1 of the test. Would take <2 hrs to repeat something similar
+
+ References:
+ Part 1:
+ * http://guides.rubyonrails.org/initialization.html
+ * http://stackoverflow.com/questions/2512254/iterate-through-every-file-in-one-directory
+ * https://hackhands.com/ruby-read-json-file-hash/
+
+ Part 2:
+ * https://kernelgarden.wordpress.com/2014/02/26/dynamic-select-boxes-in-rails-4/
