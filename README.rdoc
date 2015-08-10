@@ -1,33 +1,76 @@
-Why Ruby?
-9 months since I started coding. Only know Ruby so far, have not had a chance to learn Python yet.
+==Programming Test (FPS Analyzer)
 
-Framework:
- * Rails
- * Bootstrap
+==Test Instructions
+Write a tool that can parse a directory of logs and record that information into a SQLITE database.  Write this tool in a way that we would be able to run it again and again on any directory we wish.  So If we have Directory Foo and Directory Bar filled with logs I should be able to run
 
-List of tools I used:
- * Sublime Text
- * Rails
- * Bootstrap
+./myTool Foo
 
+./myTool Bar
+
+The second step of the project is to create a basic rails app that can query this SQLITE database and present the data in a webpage. The user should be able to filter the query by interacting with the drop down controls on the page.  These controls should be dynamic and changing the first control will dynamically change the contents in the second control.  Lastly, provide a button to query the data taking into account the filters selected.
+
+==Verbose Instructions
+Part 1:
+  Create a tool (script) that parses a directory for log files and stores them into a SQLITE database.
+  The log files are stored in a JSON format, and sample data can be found in the "FPSLog" directory.
+  Please create and design a database to save "ALL" of the information found in the log file.
+
+Part 2:
+  Please create a webpage to query the data. The webpage should contain 3 controls: 2 drop-down select boxes that
+  act like filters and a query button. The point of the webpage is to query the database for the average
+  FPS values based on the filters.
+
+Act filter:
+  This drop down should have an "all" option and a list of all acts found in the database.  
+  When the Act filter is changed by the user, the webpage should update the "world" filter values to include
+  only worlds that are found in the act. The default value should be "all" which means all worlds should be
+  included in the "world" filter.
+
+World filter:
+  This drop down should have an "all" option and a list of all worlds found in the database that adheres to 
+  the "Act" filter value.  Include all worlds found in the database if the "Act" filter is set to "all".  
+  Otherwise include only the worlds that exist in the selected act.
+
+Query Button:
+  Finally, provide a button that the user can click to query the Average FPS based on filters above.
+  
+Requirements:
+    * Parse JSON log files into database.
+    * Create and populate SQLite database with all data from the log files
+    * The tool needs to run in a posix environment: unix, linux, mac (no Windows OS allowed).
+    * Limit your choice of programming language to one of the following: Python, Ruby.
+    * Provide a very brief explanation of why you chose the language you used.
+    * Please site any references you used in making the tool.
+    * Provide a list of tools/programs/libraries/frameworks used in creating the tool.
+   
+Expectations:
+    * The tool parses a given directory of logs
+    * present a basic Web GUI to query FPS samples.
+
+==My Results
 Tool Setup/Use:
- * move a folder (Foo) containing logs into app root folder (currently has FPSLogs for example)
- * From app directory, run $ruby ./mytool.rb Foo
- * From app directory, rails s
+ * move any folder (Foo) containing logs into app root folder (currently has ./FPSLogs for example)
+ * From app directory, $ ruby ./mytool.rb Foo
+ * From app directory, $ rails s
  * localhost:3000 has FPS Query GUI
 
- Improvements:
+Improvements:
  * I added in a few more stats. Adds a little more data fidelity (and I was interested)
  * Remove 'Query FPS' button saves a user click. Page can update on drop down change of world
- * Some sort of admin dashboard/graph would provide way more info at a glance. Also easy to implement
+ * Some sort of admin dashboard/graph would provide way more info at a glance. Also easy to implement (e.g. http://startbootstrap.com/template-overviews/sb-admin-2/)
  * Rspec tests
- * Took 5 hours, 3 of which where googling part 1 of the test. Would take <2 hrs to repeat something similar
+ * Took 5 hrs, 3 of which where googling part 1 of the test. Would take <2 hrs to repeat something similar. Suggested project time was 2-3 hrs. 
 
- References:
- Part 1:
+What I googled:
  * http://guides.rubyonrails.org/initialization.html
  * http://stackoverflow.com/questions/2512254/iterate-through-every-file-in-one-directory
  * https://hackhands.com/ruby-read-json-file-hash/
-
- Part 2:
  * https://kernelgarden.wordpress.com/2014/02/26/dynamic-select-boxes-in-rails-4/
+
+Why Ruby?
+ * Only been coding for 9 Months, haven't had a chance to learn Python yet.
+
+Tools Used
+ * Sublime Text
+ * Rails
+ * Bootstrap
